@@ -6,7 +6,7 @@
                     <div class="container__logo">ИНКОМ <br><span class="accent">Недвижимость</span></div>
                     <div class="container__text">Все работают с недвижимостью,<br> а мы - с людьми</div>
                     <div class="container__phone">+7 (684) 555-01-02</div>
-                    <button class="container__button">Бесплатная консультация</button>
+                    <button class="container__button" @click="goToNewPage">Бесплатная консультация</button>
                     <div class="container__menu" :class="{ active: isActive }" @click="toggleMenu">
                         <span></span>
                         <span></span>
@@ -297,7 +297,7 @@
 import { ref } from 'vue'
 
 export default {
-    name: 'Header',
+  name: 'Header',
   setup() {
     const isActive = ref(false)
 
@@ -308,9 +308,15 @@ export default {
     return {
       isActive,
       toggleMenu
-    }
-  }
-}
+    };
+  },
+
+  methods: {
+    goToNewPage() {
+      this.$router.push('/authorization');
+    },
+  },
+};
 </script>
 
 

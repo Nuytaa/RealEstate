@@ -12,7 +12,6 @@ import Header from '@/components/Header.vue';
 import Main from '@/components/Main.vue';
 import Feedback from '@/components/Feedback.vue';
 import Footer from '@/components/Footer.vue';
-
 </script>
 
 <style lang="scss">
