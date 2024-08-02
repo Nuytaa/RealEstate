@@ -310,13 +310,19 @@ export default {
       toggleMenu
     };
   },
-
-  methods: {
-    goToNewPage() {
-      this.$router.push('/authorization');
-    },
-  },
 };
+</script>
+
+<script setup>
+  const isActive = ref(false)
+
+  function toggleMenu() {
+    isActive.value = !isActive.value
+  }
+
+  function goToNewPage() {
+    navigateTo('/authorization')
+  }
 </script>
 
 

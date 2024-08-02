@@ -1,5 +1,6 @@
 <template>
   <div>
+    <NuxtPage />
     <Header />
     <Main />
     <Feedback />
@@ -12,6 +13,7 @@ import Header from '@/components/Header.vue';
 import Main from '@/components/Main.vue';
 import Feedback from '@/components/Feedback.vue';
 import Footer from '@/components/Footer.vue';
+import authorization from './authorization.vue';
 </script>
 
 <style lang="scss">
