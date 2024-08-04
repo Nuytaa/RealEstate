@@ -1,0 +1,46 @@
+<template>
+    <div v-if="user">
+      <h1>{{ user.name }}</h1>
+      <p>{{ user.email }}</p>
+      <p>{{ user.about }}</p>
+      <img :src="user.avatar" alt="Avatar" />
+    </div>
+  </template>
+  
+  <script setup>
+    definePageMeta({
+    middleware: 'auth'
+    })
+    import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+
+const user = ref(null)
+const router = useRouter()
+
+onMounted(async () => {
+  const token = localStorage.getItem('token')
+  if (!token) {
+    router.push('/login')
+  } else {
+    try {
+      const res = await fetch('http://62.113.104.155:3000/users/me', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      if (res.ok) {
+        user.value = await res.json()
+      } else {
+        alert('Не удалось получить данные пользователя')
+        localStorage.removeItem('token')
+        router.push('/login')
+      }
+    } catch (error) {
+      console.error(error)
+      alert('Ошибка при загрузке данных пользователя')
+      localStorage.removeItem('token')
+      router.push('/login')
+    }
+  }
+})
+  </script>

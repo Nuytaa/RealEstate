@@ -321,7 +321,7 @@ export default {
   }
 
   function goToNewPage() {
-    navigateTo('/authorization')
+    navigateTo('/signup')
   }
 </script>
 
