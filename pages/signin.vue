@@ -36,7 +36,7 @@ const router = useRouter()
 
 const contactForm = async () => {
   try {
-    const res = await fetch('http://62.113.104.155:3000/signin', {
+    const res = await fetch('http://5.35.95.57:3000/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

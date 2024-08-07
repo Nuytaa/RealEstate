@@ -23,7 +23,7 @@ onMounted(async () => {
     router.push('/login')
   } else {
     try {
-      const res = await fetch('http://62.113.104.155:3000/users/me', {
+      const res = await fetch('http://5.35.95.57:3000/users/me', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
