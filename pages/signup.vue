@@ -46,7 +46,7 @@
 
   const contactForm = async () => {
     try {
-      const res = await fetch('http://62.113.104.155:3000/signup', {
+      const res = await fetch('http://5.35.95.57:3000/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
